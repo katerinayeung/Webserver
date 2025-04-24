@@ -51,5 +51,19 @@ public class WebServer {
         String body = "<html><h1>400 Bad Request</h1></html>";
         outTo.writeBytes(statusLine + headers + body);
     }
+
+    private static void sendNotFound(DataOutputStream outTo) throws IOException {
+        String statusLine = "HTTP/1.1 404 Not Found\r\n";
+        String headers = "Content-Type: text/html\r\n\r\n";
+        String body = "<html><h1>404 Not Found</h1></html>";
+        outTo.writeBytes(statusLine + headers + body);
+    }
+
+    private static void sendForbidden(DataOutputStream outTo) throws IOException {
+        String statusLine = "HTTP/1.1 403 Forbidden\r\n";
+        String headers = "Content-Type: text/html\r\n\r\n";
+        String body = "<html><h1>403 Forbidden</h1></html>";
+        outTo.writeBytes(statusLine + headers + body);
+    }
 }
     
