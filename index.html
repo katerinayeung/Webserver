@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webserver with Firewall</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url('backgroundimage.gif');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+        }
+
+        h1,
+        p {
+            margin: 0;
+            color: #ffffff;
+            text-align: center;
+        }
+        #Title {
+            font-size: 200px;
+            font-weight: bold;
+        }
+    
+        .moving-text {
+            font-size: 20px;
+            color: #ffffff;
+            white-space: nowrap;
+            position: fixed; /* Fix the position to the viewport */
+            top: 70%; /* Adjust vertical position */
+            right: 0; /* Start off-screen to the right */
+            animation: moveText 10s linear infinite;
+            /* Animation properties */
+        }
+        @keyframes moveText {
+            0% {
+                transform: translateX(-100vw);
+                /* Start off-screen to the right */
+            }
+    
+            100% {
+                transform: translateX(100vw);
+                /* Move off-screen to the left */
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the</h1>
+    <p id="Title">Webserver</p>
+    <p class="moving-text">This webserver is protected by a firewall.</p>
+</body>
+</html>
