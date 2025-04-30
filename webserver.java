@@ -65,7 +65,7 @@ public class webserver {
                     //  Send it to the client
                     sendFileResponse(outTo, fileContent, mimeType);
                     System.out.println("Response sent to client.");
-                    System.out.println("Requested file path: " + filePath);
+                    System.out.println("Requested file path: " + filePath + "\nMIME type: " + mimeType);
                     client.close();
 
                 } catch (IOException e) {
