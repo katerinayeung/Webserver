@@ -79,14 +79,15 @@ public class webserver {
         }
     }
     
-    private static boolean isIpBlocked(String ip) {
-        return ip.equals("127.0.0.17") || ip.startsWith("10.");
+    private static boolean isIpBlocked(String ipAddress) {
+        return  ipAddress.startsWith("172.17.157.");
     }
 
     private static void sendFileResponse(DataOutputStream outTo, byte[] fileContent, String mimeType) throws IOException {
         String statusLine = "HTTP/1.1 200 OK\r\n";
         String headers = "Content-Type: " + mimeType + "\r\n" +
                          "Content-Length: " + fileContent.length + "\r\n\r\n";
+        System.out.println(statusLine);
         outTo.writeBytes(statusLine + headers);
         outTo.write(fileContent);
     }
@@ -104,6 +105,7 @@ public class webserver {
         </body>
         </html>
         """;
+        System.out.println(statusLine);
         outTo.writeBytes(statusLine + headers + body);
     }
 
@@ -120,6 +122,7 @@ public class webserver {
         </body>
         </html>
         """;
+        System.out.println(statusLine);
         outTo.writeBytes(statusLine + headers + body);
     }
 
@@ -135,6 +138,7 @@ public class webserver {
         </body>
         </html>
         """.formatted(ipAddress);
+        System.out.println(statusLine);
         outTo.writeBytes(statusLine + headers + body);
     }
 
